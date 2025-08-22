@@ -1,183 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talha Khalid | Portfolio</title>
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
   <style>
-    /* Basic reset + fonts */
-    *{margin:0;padding:0;box-sizing:border-box;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif}
-    html {scroll-behavior:smooth; scroll-padding-top:90px}
-    body {background:#0f172a;color:#fff;line-height:1.6}
-
-    /* Header / Hero */
-    header{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background:linear-gradient(135deg,#1e293b,#0f172a,#1e40af);
-      background-size:400% 400%;
-      animation:gradientMove 5s ease infinite;
-      padding:60px 20px 40px;
-      border-bottom-left-radius:44px;
-      border-bottom-right-radius:44px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.6);
-    }
-    @keyframes gradientMove{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #333;
     }
 
-    header img{
-      width:150px;height:150px;border-radius:50%;border:4px solid #fff;margin-bottom:18px;object-fit:cover;
-      box-shadow:0 6px 25px rgba(0,0,0,0.5);
+    /* ===== Navbar ===== */
+    nav {
+      background: #333;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
     }
-    header h1{font-size:clamp(2rem,5vw,3rem);color:#f59e0b;margin-bottom:8px;text-shadow:0 3px 10px rgba(0,0,0,0.7)}
-    header p{font-size:clamp(1rem,2.5vw,1.25rem);color:#38bdf8;margin-bottom:18px}
-    .header-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .download-btn{
-      display:inline-block;padding:10px 22px;background:#ff6600;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.35);transition:transform .18s,background .18s
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-    .download-btn:hover{transform:translateY(-4px);background:#e65c00}
+    nav a:hover {
+      color: #FFD700;
+    }
 
-    /* Sections */
-    section{padding:60px 18px;max-width:1100px;margin:40px auto;background:#1e293b;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,0.35)}
-    h2{margin-bottom:16px;color:#ff6600;font-size:clamp(1.4rem,3.5vw,2rem);border-bottom:2px solid rgba(255,255,255,0.06);display:inline-block;padding-bottom:6px}
-    p,li{color:#d8dfe8;font-size:clamp(.9rem,2vw,1rem)}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skills span{background:#334155;padding:8px 12px;border-radius:22px;box-shadow:0 3px 8px rgba(0,0,0,0.4)}
+    header {
+      background: linear-gradient(135deg, #4A90E2, #007AFF);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeInDown 3s ease-in-out; /* Slow header animation */
+    }
 
-    /* Projects grid */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .project{background:#2f3b4a;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
-    .project h3{color:#ff6600;margin-bottom:8px}
-    .project p{color:#d6dbe0;font-size:0.95rem}
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-    /* Contact / Footer */
-    .contact-links a{display:inline-block;margin-right:10px;color:#38bdf8;text-decoration:none}
-    footer{padding:22px;text-align:center;background:#0b1220;color:#aab2bf;margin-top:26px;border-top:1px solid rgba(255,255,255,0.03)}
+    header p {
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
 
-    /* Responsive small tweaks */
-    @media (max-width:520px){
-      header{padding-top:40px}
-      header img{width:120px;height:120px}
-      .download-btn{padding:9px 16px;font-size:.95rem}
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #007AFF;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="animate__animated animate__fadeInDown">
-    <!-- Make sure profile.jpg exists in repo root and name matches exactly -->
-    <img src="profile.jpg" alt="Talha Khalid - Profile">
-    <h1>Talha Khalid</h1>
-    <p>Data Analyst | Machine Learning & Freelance</p>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="header-btns">
-      <a href="#contact" class="download-btn">Contact Me</a>
-      <!-- Make sure TALHA-CV.pdf exists in repo root and name matches exactly -->
-      <a href="TALHA-CV.pdf" download class="download-btn">⬇ Download CV</a>
-    </div>
+  <!-- Header -->
+  <header id="about">
+    <h1>Talha Khalid</h1>
+    <p>Data Analyst | Python | SQL | Power BI | Machine Learning</p>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="animate__animated animate__fadeInUp">
-    <h2>About Me</h2>
-    <p>I am <strong>Talha Khalid</strong>, a <strong>BS Data Analytics</strong> graduate from <strong>Government College University, Faisalabad (2021–2025)</strong>. I have completed courses in data analytics, statistics, programming, and machine learning. My final year project: <em>Air Quality Index Prediction Web App</em> using machine learning and Streamlit.</p>
-    <p>I have hands-on experience in <strong>Machine Learning, Deep Learning, NLP, RAG-based AI systems, and Data Visualization</strong>. Skills include SQL, Power BI, Python, and building end-to-end ML applications. Open to freelance projects, internships, and collaborations.</p>
-  </section>
+  <!-- Projects -->
+  <section id="projects" class="container">
 
-  <!-- SKILLS -->
-  <section id="skills" class="animate__animated animate__fadeInUp">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span><span>SQL</span><span>MySQL</span><span>Excel</span>
-      <span>Scikit-learn</span><span>Keras</span><span>Power BI</span><span>Streamlit</span>
-      <span>NLP</span><span>HuggingFace</span><span>LangChain</span><span>Problem Solving</span>
+    <div class="card">
+      <h3>Air Quality Index Prediction</h3>
+      <p>Developed ML models to predict AQI using real-world datasets. The system was deployed on Streamlit for real-time predictions, enabling better air monitoring. Integrated data preprocessing, feature engineering, and regression models. Designed a clean dashboard for users to interact and visualize AQI levels effectively.</p>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="animate__animated animate__fadeInUp">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project"><h3>Air Quality Index Prediction</h3><p>Built ML models to predict AQI; deployed via Streamlit for real-time predictions.</p></div>
-      <div class="project"><h3>Mental Health NLP</h3><p>Text classification model (Bi-LSTM) for mental health categories using embeddings.</p></div>
-      <div class="project"><h3>Medical RAG QA System</h3><p>RAG system using embeddings + FAISS for document QA on medical PDFs.</p></div>
-      <div class="project"><h3>Unique Human Count (YOLOv8)</h3><p>Real-time detection & counting of unique humans in video streams using YOLOv8.</p></div>
-      <div class="project"><h3>Sales & Collection Dashboard</h3><p>Interactive Power BI dashboard connected to MySQL for live business KPIs.</p></div>
-      <div class="project"><h3>PSL Cricket Dashboard</h3><p>Player & team analytics across seasons and grounds with visual insights.</p></div>
+    <div class="card">
+      <h3>Mental Health NLP</h3>
+      <p>Built a Bi-LSTM-based NLP model to classify text into different mental health categories. Leveraged embeddings for better semantic understanding. The system helps detect early mental health patterns in conversations. Focused on precision and recall to ensure minimal misclassification for sensitive applications.</p>
     </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="animate__animated animate__fadeInUp">
-    <h2>Experience</h2>
-    <div><strong>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</strong>
-      <p>Built SQL queries & MySQL databases, developed Power BI dashboards, created DAX KPIs, and performed data cleaning and reporting.</p>
+    <div class="card">
+      <h3>Medical RAG QA System</h3>
+      <p>Implemented a Retrieval-Augmented Generation (RAG) pipeline for medical PDF datasets. Combined embeddings with FAISS for fast and accurate retrieval. The system enables medical professionals to ask domain-specific queries and receive contextual answers. Improves efficiency in handling vast amounts of unstructured data.</p>
     </div>
-  </section>
 
-  <!-- EDUCATION -->
-  <section id="education" class="animate__animated animate__fadeInUp">
-    <h2>Education</h2>
-    <div>
-      <strong>BS Data Analytics</strong>
-      <p>Government College University, Faisalabad (2021–2025) — <strong>Completed</strong></p>
-      <p>Final Year Project: Air Quality Index Prediction Web App</p>
+    <div class="card">
+      <h3>Unique Human Count (YOLOv8)</h3>
+      <p>Developed a YOLOv8-based model for real-time human detection and unique counting in video streams. Optimized for accuracy and speed, the system is useful in security, crowd management, and smart surveillance. Implemented with OpenCV for live camera integration and analytics.</p>
     </div>
-  </section>
 
-  <!-- CERTS & ACHIEVEMENTS -->
-  <section id="certifications" class="animate__animated animate__fadeInUp">
-    <h2>Certifications</h2>
-    <p>Learning Data Analytics: Foundations — LinkedIn Learning (2024)</p>
-    <p>Getting Started with AWS Cloud Essentials</p>
-    <h2 style="margin-top:18px">Achievements</h2>
-    <div class="skills achievements">
-      <span>Kaggle Notebook Expert</span><span>Kaggle Dataset Expert</span><span>Kaggle Discussion Expert</span>
+    <div class="card">
+      <h3>Sales & Collection Dashboard</h3>
+      <p>Created an interactive Power BI dashboard integrated with MySQL databases. Monitors live KPIs such as revenue, collections, and outstanding balances. Applied DAX for calculated metrics and trend forecasting. Provided stakeholders with actionable insights to make informed decisions quickly.</p>
     </div>
+
+    <div class="card">
+      <h3>PSL Cricket Dashboard</h3>
+      <p>Analyzed Pakistan Super League (PSL) data across multiple seasons. Designed a Power BI dashboard with filters for teams, players, and venues. Visualized batting and bowling statistics with interactive charts. Delivered meaningful insights into player performance trends and team strategies.</p>
+    </div>
+
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="animate__animated animate__fadeInUp">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:talhakhalid142@gmail.com" style="color:#38bdf8">talhakhalid142@gmail.com</a></p>
-    <p>Phone: +92-310-7708080</p>
-    <p class="contact-links">
-      <a href="https://www.linkedin.com/in/talha-khalid-189092272/" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="https://github.com/talha142" target="_blank" rel="noopener">GitHub</a> |
-      <a href="https://www.kaggle.com/talhachoudary" target="_blank" rel="noopener">Kaggle</a> |
-      <a href="https://www.fiverr.com/users/talhakhalid792" target="_blank" rel="noopener">Fiverr</a>
-    </p>
+  <!-- Contact -->
+  <section id="contact" style="padding:40px 20px; text-align:center;">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:talhakhalid142@gmail.com">talhakhalid142@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/talha-khalid-189092272/" target="_blank">Profile Link</a></p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Talha Khalid | Portfolio</p>
+    <p>© 2025 Talha Khalid | All Rights Reserved</p>
   </footer>
 
-  <!-- GSAP (optional) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script>
-    if (window.gsap && window.gsap.registerPlugin) {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('section').forEach(section=>{
-        gsap.fromTo(section,{opacity:0,y:40},{opacity:1,y:0,duration:0.9,ease:'power2.out',scrollTrigger:{trigger:section,start:'top 80%'}});
-      });
-    } else {
-      console.warn("GSAP not loaded — scroll animations will be disabled.");
-    }
-  </script>
 </body>
 </html>
