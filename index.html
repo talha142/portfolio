@@ -11,6 +11,11 @@
 
     html {scroll-behavior:smooth; scroll-padding-top:80px;}
 
+    /* Navbar */
+    nav {position:fixed; top:0; left:0; width:100%; background:#1e293b; padding:15px 20px; display:flex; justify-content:center; gap:25px; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.5);}
+    nav a {color:#fff; text-decoration:none; font-weight:500; transition:0.3s;}
+    nav a:hover {color:#ff6600;}
+
     /* Hero */
     header {height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:linear-gradient(120deg,#1a2a6c,#b21f1f,#fdbb2d); background-size:400% 400%; animation:gradientMove 15s ease infinite;}
     @keyframes gradientMove {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
@@ -33,7 +38,6 @@
     .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
     .project {background:#334155; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.5); transition:transform 0.3s;}
     .project:hover {transform:translateY(-5px);}
-    .project img {width:100%; height:200px; object-fit:cover;}
     .project-details {padding:15px;}
     .project-details h3 {margin-bottom:10px; color:#ff6600;}
     .project-details p {font-size:0.95rem; color:#ddd;}
@@ -42,6 +46,18 @@
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header class="animate__animated animate__fadeInDown">
     <img src="profile.jpg" alt="Profile">
     <h1>Talha Khalid</h1>
@@ -70,27 +86,21 @@
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project">
-        <img src="project1.jpg" alt="AQI Project">
         <div class="project-details"><h3>Air Quality Index Prediction</h3><p>Built a machine learning model to predict AQI using multiple algorithms. Cleaned and pre-processed environmental datasets. Integrated the trained model into a user-friendly Streamlit web application for real-time predictions.</p></div>
       </div>
       <div class="project">
-        <img src="project2.jpg" alt="Mental Health NLP">
         <div class="project-details"><h3>Mental Health NLP</h3><p>Designed a deep learning model to classify mental health conditions into Depression, Anxiety, Stress, or Normal. Applied preprocessing techniques like tokenization, embeddings, and Bi-LSTM layers. Achieved reliable performance for real-world text classification.</p></div>
       </div>
       <div class="project">
-        <img src="project3.jpg" alt="Medical RAG">
         <div class="project-details"><h3>Medical RAG QA System</h3><p>Developed a Retrieval-Augmented Generation (RAG) system to answer medical questions from custom PDFs. Implemented embeddings with HuggingFace and FAISS vector store for efficient retrieval. Provided accurate and context-aware medical responses.</p></div>
       </div>
       <div class="project">
-        <img src="project4.jpg" alt="YOLOv8 Human Count">
         <div class="project-details"><h3>Unique Human Count (YOLOv8)</h3><p>Implemented a real-time object detection system to count unique humans in video streams. Used YOLOv8 for robust detection and tracking. Designed for applications like crowd management, surveillance, and smart city monitoring.</p></div>
       </div>
       <div class="project">
-        <img src="project5.jpg" alt="Sales Dashboard">
         <div class="project-details"><h3>Sales & Collection Dashboard</h3><p>Built interactive dashboards to analyze sales trends, revenue, and overdue collections. Connected SQL queries with Power BI for live insights. Designed custom KPIs using DAX for business reporting.</p></div>
       </div>
       <div class="project">
-        <img src="project6.jpg" alt="PSL Dashboard">
         <div class="project-details"><h3>PSL Cricket Dashboard</h3><p>Analyzed player and team performances across different grounds and seasons. Created visual insights for team-wise, ground-wise, and player-specific comparisons. Delivered an engaging interactive dashboard for cricket analytics.</p></div>
       </div>
     </div>
