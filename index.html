@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Talha Khalid | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-    body {background:#0f172a; color:#fff; line-height:1.6;}
-    html {scroll-behavior:smooth; scroll-padding-top:80px;}
 
-    /* Header */
-    header {
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Basic reset + fonts */
+    *{margin:0;padding:0;box-sizing:border-box;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif}
+    html {scroll-behavior:smooth; scroll-padding-top:90px}
+    body {background:#0f172a;color:#fff;line-height:1.6}
+
+    /* Header / Hero */
+    header{
       height:100vh;
       display:flex;
       flex-direction:column;
@@ -21,167 +25,159 @@
       background:linear-gradient(135deg,#1e293b,#0f172a,#1e40af);
       background-size:400% 400%;
       animation:gradientMove 5s ease infinite;
-      padding-top:50px;
-      border-bottom-left-radius:50px;
-      border-bottom-right-radius:50px;
+      padding:60px 20px 40px;
+      border-bottom-left-radius:44px;
+      border-bottom-right-radius:44px;
       box-shadow:0 8px 30px rgba(0,0,0,0.6);
     }
-    @keyframes gradientMove {
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
+    @keyframes gradientMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
     }
-    header img {
-      width:150px; height:150px;
-      border-radius:50%;
-      border:4px solid #fff;
-      margin-bottom:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.5);
+
+    header img{
+      width:150px;height:150px;border-radius:50%;border:4px solid #fff;margin-bottom:18px;object-fit:cover;
+      box-shadow:0 6px 25px rgba(0,0,0,0.5);
     }
-    header h1 {
-      font-size:clamp(2rem,5vw,3rem);
-      margin-bottom:15px;
-      color:#f59e0b;
-      text-shadow:0 3px 10px rgba(0,0,0,0.7);
+    header h1{font-size:clamp(2rem,5vw,3rem);color:#f59e0b;margin-bottom:8px;text-shadow:0 3px 10px rgba(0,0,0,0.7)}
+    header p{font-size:clamp(1rem,2.5vw,1.25rem);color:#38bdf8;margin-bottom:18px}
+    .header-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .download-btn{
+      display:inline-block;padding:10px 22px;background:#ff6600;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.35);transition:transform .18s,background .18s
     }
-    header p {
-      font-size:clamp(1rem,2.5vw,1.3rem);
-      color:#38bdf8;
-      margin-bottom:20px;
-    }
-    .download-btn {
-      display:inline-block;
-      padding:12px 30px;
-      background:#ff6600;
-      color:#fff;
-      text-decoration:none;
-      border-radius:50px;
-      font-weight:bold;
-      box-shadow:0 4px 15px rgba(0,0,0,0.5);
-      transition:0.3s;
-      margin:5px;
-    }
-    .download-btn:hover {
-      background:#e65c00;
-      transform:scale(1.08);
-    }
+    .download-btn:hover{transform:translateY(-4px);background:#e65c00}
 
     /* Sections */
-    section {padding:80px 20px; max-width:1100px; margin:60px auto; background:#1e293b; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.4);}
-    h2 {margin-bottom:20px; color:#ff6600; font-size:2.2rem; border-bottom:2px solid #444; display:inline-block; padding-bottom:8px;}
-    p, li {font-size:clamp(0.9rem,2vw,1rem); color:#ddd;}
+    section{padding:60px 18px;max-width:1100px;margin:40px auto;background:#1e293b;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,0.35)}
+    h2{margin-bottom:16px;color:#ff6600;font-size:clamp(1.4rem,3.5vw,2rem);border-bottom:2px solid rgba(255,255,255,0.06);display:inline-block;padding-bottom:6px}
+    p,li{color:#d8dfe8;font-size:clamp(.9rem,2vw,1rem)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skills span{background:#334155;padding:8px 12px;border-radius:22px;box-shadow:0 3px 8px rgba(0,0,0,0.4)}
 
-    /* Skills & Achievements */
-    .skills span, .achievements span {
-      display:inline-block; background:#334155; padding:10px 15px; margin:6px; border-radius:25px; box-shadow:0 3px 7px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s;
+    /* Projects grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .project{background:#2f3b4a;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    .project h3{color:#ff6600;margin-bottom:8px}
+    .project p{color:#d6dbe0;font-size:0.95rem}
+
+    /* Contact / Footer */
+    .contact-links a{display:inline-block;margin-right:10px;color:#38bdf8;text-decoration:none}
+    footer{padding:22px;text-align:center;background:#0b1220;color:#aab2bf;margin-top:26px;border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* Responsive small tweaks */
+    @media (max-width:520px){
+      header{padding-top:40px}
+      header img{width:120px;height:120px}
+      .download-btn{padding:9px 16px;font-size:.95rem}
     }
-    .skills span:hover, .achievements span:hover {transform:scale(1.1); box-shadow:0 0 15px #ff6600;}
-
-    /* Projects Grid (text-only) */
-    .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
-    .project {background:#334155; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.5); padding:15px;}
-    .project-details h3 {margin-bottom:10px; color:#ff6600;}
-    .project-details p {font-size:0.95rem; color:#ddd;}
-
-    /* Footer */
-    footer {text-align:center; background:#0f172a; color:#aaa; padding:25px; margin-top:40px; border-top:1px solid #333;}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="animate__animated animate__fadeInDown">
-    <img src="profile.jpg" alt="Profile">
+    <!-- Make sure profile.jpg exists in repo root and name matches exactly -->
+    <img src="profile.jpg" alt="Talha Khalid - Profile">
     <h1>Talha Khalid</h1>
     <p>Data Analyst | Machine Learning & Freelance</p>
+
     <div class="header-btns">
       <a href="#contact" class="download-btn">Contact Me</a>
+      <!-- Make sure TALHA-CV.pdf exists in repo root and name matches exactly -->
       <a href="TALHA-CV.pdf" download class="download-btn">⬇ Download CV</a>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about">
+  <!-- ABOUT -->
+  <section id="about" class="animate__animated animate__fadeInUp">
     <h2>About Me</h2>
-    <p>I am <b>Talha Khalid</b>, a <b>BS Data Analytics</b> graduate from <b>Government College University, Faisalabad (2021–2025)</b>. I have successfully completed all my courses in data analytics, statistics, programming, and machine learning. My final year project was an <b>Air Quality Index Prediction Web App</b> using machine learning and Streamlit.</p>
-    <p>I have hands-on experience in <b>Machine Learning, Deep Learning, NLP, RAG-based AI systems, and Data Visualization</b>. Along with strong skills in SQL, Power BI, and Python, I enjoy solving real-world problems through data-driven insights. I am open to freelance projects, internships, and collaborations in the data analytics field.</p>
+    <p>I am <strong>Talha Khalid</strong>, a <strong>BS Data Analytics</strong> graduate from <strong>Government College University, Faisalabad (2021–2025)</strong>. I have completed courses in data analytics, statistics, programming, and machine learning. My final year project: <em>Air Quality Index Prediction Web App</em> using machine learning and Streamlit.</p>
+    <p>I have hands-on experience in <strong>Machine Learning, Deep Learning, NLP, RAG-based AI systems, and Data Visualization</strong>. Skills include SQL, Power BI, Python, and building end-to-end ML applications. Open to freelance projects, internships, and collaborations.</p>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- SKILLS -->
+  <section id="skills" class="animate__animated animate__fadeInUp">
     <h2>Skills</h2>
     <div class="skills">
       <span>Python</span><span>SQL</span><span>MySQL</span><span>Excel</span>
-      <span>Scikit-learn</span><span>Keras</span><span>LSTM</span>
-      <span>Power BI</span><span>Streamlit</span><span>Matplotlib</span>
-      <span>NLP</span><span>RAG Systems</span><span>LangChain</span>
-      <span>HuggingFace</span><span>Communication</span><span>Problem Solving</span>
+      <span>Scikit-learn</span><span>Keras</span><span>Power BI</span><span>Streamlit</span>
+      <span>NLP</span><span>HuggingFace</span><span>LangChain</span><span>Problem Solving</span>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="animate__animated animate__fadeInUp">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project"><div class="project-details"><h3>Air Quality Index Prediction</h3><p>Built a machine learning model to predict AQI using multiple algorithms. Integrated into Streamlit web application for real-time predictions.</p></div></div>
-      <div class="project"><div class="project-details"><h3>Mental Health NLP</h3><p>Deep learning model to classify mental health conditions into Depression, Anxiety, Stress, or Normal. Applied tokenization, embeddings, and Bi-LSTM layers.</p></div></div>
-      <div class="project"><div class="project-details"><h3>Medical RAG QA System</h3><p>Retrieval-Augmented Generation system to answer medical questions from PDFs using HuggingFace and FAISS vector store.</p></div></div>
-      <div class="project"><div class="project-details"><h3>Unique Human Count (YOLOv8)</h3><p>Real-time object detection system counting unique humans in video streams using YOLOv8.</p></div></div>
-      <div class="project"><div class="project-details"><h3>Sales & Collection Dashboard</h3><p>Interactive dashboards analyzing sales trends, revenue, and overdue collections using SQL & Power BI.</p></div></div>
-      <div class="project"><div class="project-details"><h3>PSL Cricket Dashboard</h3><p>Analyzed player and team performances across grounds and seasons. Delivered engaging interactive dashboards.</p></div></div>
+      <div class="project"><h3>Air Quality Index Prediction</h3><p>Built ML models to predict AQI; deployed via Streamlit for real-time predictions.</p></div>
+      <div class="project"><h3>Mental Health NLP</h3><p>Text classification model (Bi-LSTM) for mental health categories using embeddings.</p></div>
+      <div class="project"><h3>Medical RAG QA System</h3><p>RAG system using embeddings + FAISS for document QA on medical PDFs.</p></div>
+      <div class="project"><h3>Unique Human Count (YOLOv8)</h3><p>Real-time detection & counting of unique humans in video streams using YOLOv8.</p></div>
+      <div class="project"><h3>Sales & Collection Dashboard</h3><p>Interactive Power BI dashboard connected to MySQL for live business KPIs.</p></div>
+      <div class="project"><h3>PSL Cricket Dashboard</h3><p>Player & team analytics across seasons and grounds with visual insights.</p></div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="animate__animated animate__fadeInUp">
     <h2>Experience</h2>
-    <div class="experience"><h3>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</h3><p>Built SQL queries & MySQL databases, designed Power BI dashboards, created DAX-based KPIs, conducted data cleaning & reporting.</p></div>
+    <div><strong>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</strong>
+      <p>Built SQL queries & MySQL databases, developed Power BI dashboards, created DAX KPIs, and performed data cleaning and reporting.</p>
+    </div>
   </section>
 
-  <!-- Education -->
-  <section id="education">
+  <!-- EDUCATION -->
+  <section id="education" class="animate__animated animate__fadeInUp">
     <h2>Education</h2>
-    <div class="education"><h3>BS Data Analytics</h3><p>Government College University, Faisalabad (2021–2025) – <b>Completed</b></p><p>Final Year Project: Air Quality Index Prediction Web App using Machine Learning</p></div>
+    <div>
+      <strong>BS Data Analytics</strong>
+      <p>Government College University, Faisalabad (2021–2025) — <strong>Completed</strong></p>
+      <p>Final Year Project: Air Quality Index Prediction Web App</p>
+    </div>
   </section>
 
-  <!-- Certifications -->
-  <section id="certifications">
+  <!-- CERTS & ACHIEVEMENTS -->
+  <section id="certifications" class="animate__animated animate__fadeInUp">
     <h2>Certifications</h2>
     <p>Learning Data Analytics: Foundations — LinkedIn Learning (2024)</p>
     <p>Getting Started with AWS Cloud Essentials</p>
-  </section>
-
-  <!-- Achievements -->
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <div class="achievements">
-      <span>Kaggle Notebook Expert</span>
-      <span>Kaggle Dataset Expert</span>
-      <span>Kaggle Discussion Expert</span>
+    <h2 style="margin-top:18px">Achievements</h2>
+    <div class="skills achievements">
+      <span>Kaggle Notebook Expert</span><span>Kaggle Dataset Expert</span><span>Kaggle Discussion Expert</span>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="animate__animated animate__fadeInUp">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:talhakhalid142@gmail.com">talhakhalid142@gmail.com</a></p>
+    <p>Email: <a href="mailto:talhakhalid142@gmail.com" style="color:#38bdf8">talhakhalid142@gmail.com</a></p>
     <p>Phone: +92-310-7708080</p>
-    <p><a href="https://www.linkedin.com/in/talha-khalid-189092272/">LinkedIn</a> | <a href="https://github.com/talha142">GitHub</a> | <a href="https://www.kaggle.com/talhachoudary">Kaggle</a> | <a href="https://www.fiverr.com/users/talhakhalid792">Fiverr</a></p>
+    <p class="contact-links">
+      <a href="https://www.linkedin.com/in/talha-khalid-189092272/" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://github.com/talha142" target="_blank" rel="noopener">GitHub</a> |
+      <a href="https://www.kaggle.com/talhachoudary" target="_blank" rel="noopener">Kaggle</a> |
+      <a href="https://www.fiverr.com/users/talhakhalid792" target="_blank" rel="noopener">Fiverr</a>
+    </p>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Talha Khalid | Portfolio</p>
   </footer>
 
+  <!-- GSAP (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('section').forEach(section=>{
-      gsap.fromTo(section,{opacity:0,y:50},{opacity:1,y:0,duration:1,ease:'power2.out',scrollTrigger:{trigger:section,start:'top 80%'}});
-    });
+    if (window.gsap && window.gsap.registerPlugin) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray('section').forEach(section=>{
+        gsap.fromTo(section,{opacity:0,y:40},{opacity:1,y:0,duration:0.9,ease:'power2.out',scrollTrigger:{trigger:section,start:'top 80%'}});
+      });
+    } else {
+      console.warn("GSAP not loaded — scroll animations will be disabled.");
+    }
   </script>
-
 </body>
 </html>
