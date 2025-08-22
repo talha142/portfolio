@@ -7,21 +7,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      line-height: 1.6;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
 
-    /* Fixed Header */
+    /* ===== Header ===== */
     header {
-      background: #222;
-      color: #fff;
+      background: #007bff;
+      color: white;
       padding: 15px 20px;
       text-align: center;
       position: fixed;
@@ -32,94 +33,72 @@
     }
 
     header h1 {
+      margin: 0;
       font-size: 1.8rem;
     }
 
-    header p {
-      font-size: 1rem;
-      color: #bbb;
-    }
-
-    /* Navbar */
     nav {
       margin-top: 10px;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 12px;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ff9800;
+      color: #ffd700;
     }
 
-    /* Sections */
+    /* ===== Content spacing so header doesn’t overlap ===== */
+    main {
+      padding: 100px 20px 40px; /* top padding = header height */
+    }
+
     section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* To adjust spacing because header is fixed */
-    .spacer {
-      height: 120px;
-    }
-
-    .card {
-      background: #fff;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
+      margin-bottom: 60px;
     }
 
     h2 {
+      color: #007bff;
       margin-bottom: 10px;
-      color: #444;
     }
 
     p {
-      margin-bottom: 10px;
+      max-width: 800px;
     }
 
-    .btn {
+    .read-more {
       display: inline-block;
+      margin-top: 10px;
+      background: #007bff;
+      color: white;
       padding: 8px 15px;
-      background: #ff9800;
-      color: #fff;
-      border-radius: 8px;
+      border-radius: 5px;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
     }
 
-    .btn:hover {
-      background: #e68900;
+    .read-more:hover {
+      background: #0056b3;
     }
 
     footer {
+      background: #333;
+      color: white;
       text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
-      margin-top: 30px;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <h1 class="animate__animated animate__fadeInDown">Talha Khalid</h1>
-    <p class="animate__animated animate__fadeIn">Data Analyst | Python | SQL | Power BI | Machine Learning</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -129,66 +108,43 @@
     </nav>
   </header>
 
-  <!-- Spacer -->
-  <div class="spacer"></div>
-
-  <!-- About -->
-  <section id="about">
-    <div class="card animate__animated animate__fadeInLeft">
+  <!-- Main Content -->
+  <main>
+    <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I am <b>Talha Khalid</b>, a passionate Data Analyst with experience in Python, SQL, Power BI, and Machine Learning. I love turning raw data into actionable insights.</p>
-    </div>
-  </section>
+      <p>I am a passionate Data Analyst skilled in Python, SQL, Excel, and Power BI. I love turning raw data into meaningful insights.</p>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <div class="card animate__animated animate__fadeInRight">
+    <section id="projects">
       <h2>Projects</h2>
-      <p>Here are some of my key projects:</p>
-      <ul>
-        <li>Customer Analysis Dashboard (Power BI)</li>
-        <li>Loan Prediction (Python, Random Forest)</li>
-        <li>House Price Prediction (Python, Linear Regression)</li>
-        <li>IPL & PSL Analytics (Python + Power BI)</li>
-        <li>Sales & Collection Analytics (MySQL + Power BI)</li>
-      </ul>
-    </div>
-  </section>
+      <p>Here are some of my key projects in analytics and machine learning.</p>
+      <a href="#" class="read-more">Read More</a>
+    </section>
 
-  <!-- Experience -->
-  <section id="experience">
-    <div class="card animate__animated animate__fadeInLeft">
+    <section id="experience">
       <h2>Experience</h2>
-      <p><b>Intern at PEL Lahore</b> — Worked on database creation in MySQL, connected with Power BI, and built dashboards for sales and collections. Collaborated with cross-functional teams to analyze financial trends and improve reporting.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
-  </section>
+      <p>Worked as a Data Analyst Intern at PEL Lahore where I built Power BI dashboards, SQL databases, and analytics pipelines.</p>
+      <a href="#" class="read-more">Read More</a>
+    </section>
 
-  <!-- Certifications -->
-  <section id="certifications">
-    <div class="card animate__animated animate__fadeInRight">
+    <section id="certifications">
       <h2>Certifications</h2>
       <ul>
-        <li>Learning Data Analytics: Foundations (LinkedIn)</li>
-        <li>Getting Started with AWS Cloud (AWS)</li>
+        <li>Learning Data Analytics: Foundations - LinkedIn</li>
+        <li>Getting Started with AWS Cloud</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="card animate__animated animate__fadeInUp">
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:talha@example.com">talha@example.com</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/talhakhalid</a></p>
-      <p>Kaggle: <a href="#">kaggle.com/talhakhalid</a></p>
-    </div>
-  </section>
+      <p>Email: talha.khalid@example.com</p>
+      <p>LinkedIn: linkedin.com/in/talhakhalid</p>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Talha Khalid | All Rights Reserved</p>
+    <p>© 2025 Talha Khalid. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
