@@ -39,7 +39,7 @@
       color: white;
       padding: 40px 20px;
       text-align: center;
-      animation: fadeInDown 3s ease-in-out; /* Slow header animation */
+      animation: fadeInDown 0.5s ease-in-out; /* slow header animation */
     }
 
     header h1 {
@@ -85,6 +85,30 @@
       line-height: 1.6;
     }
 
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #007AFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .read-more:hover {
+      background: #0056b3;
+    }
+
+    .more-text {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -123,6 +147,8 @@
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -137,34 +163,49 @@
 
     <div class="card">
       <h3>Air Quality Index Prediction</h3>
-      <p>Developed ML models to predict AQI using real-world datasets. The system was deployed on Streamlit for real-time predictions, enabling better air monitoring. Integrated data preprocessing, feature engineering, and regression models. Designed a clean dashboard for users to interact and visualize AQI levels effectively.</p>
+      <p>Developed ML models to predict AQI using real-world datasets. 
+         The system was deployed on Streamlit for real-time predictions, enabling better air monitoring.</p>
+      <p class="more-text">Integrated data preprocessing, feature engineering, and regression models. 
+         Designed a clean dashboard for users to interact and visualize AQI levels effectively. 
+         This project demonstrated my ability to combine machine learning with interactive visualization.</p>
+      <span class="read-more">Read More</span>
     </div>
 
     <div class="card">
       <h3>Mental Health NLP</h3>
-      <p>Built a Bi-LSTM-based NLP model to classify text into different mental health categories. Leveraged embeddings for better semantic understanding. The system helps detect early mental health patterns in conversations. Focused on precision and recall to ensure minimal misclassification for sensitive applications.</p>
+      <p>Built a Bi-LSTM-based NLP model to classify text into different mental health categories. 
+         Leveraged embeddings for better semantic understanding.</p>
+      <p class="more-text">The system helps detect early mental health patterns in conversations. 
+         Focused on precision and recall to ensure minimal misclassification. 
+         This project highlights my skills in deep learning and natural language processing for sensitive domains.</p>
+      <span class="read-more">Read More</span>
     </div>
 
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="container">
     <div class="card">
-      <h3>Medical RAG QA System</h3>
-      <p>Implemented a Retrieval-Augmented Generation (RAG) pipeline for medical PDF datasets. Combined embeddings with FAISS for fast and accurate retrieval. The system enables medical professionals to ask domain-specific queries and receive contextual answers. Improves efficiency in handling vast amounts of unstructured data.</p>
+      <h3>Bachelor in Data Science</h3>
+      <p>Pursuing final year of Data Analytics at Government College University Faisalabad (GCUF). 
+         The curriculum includes advanced courses in machine learning, statistics, and big data analytics.</p>
+      <p class="more-text">I have applied concepts in real-world projects and gained strong experience in Python, SQL, Power BI, and Excel. 
+         My academic journey has been shaped by research, problem-solving, and continuous learning to stay aligned with industry trends.</p>
+      <span class="read-more">Read More</span>
     </div>
+  </section>
 
+  <!-- Experience -->
+  <section id="experience" class="container">
     <div class="card">
-      <h3>Unique Human Count (YOLOv8)</h3>
-      <p>Developed a YOLOv8-based model for real-time human detection and unique counting in video streams. Optimized for accuracy and speed, the system is useful in security, crowd management, and smart surveillance. Implemented with OpenCV for live camera integration and analytics.</p>
+      <h3>Internship at PEL Lahore</h3>
+      <p>Worked as a Data Analyst Intern at PEL where I designed and developed a MySQL database integrated with Power BI. 
+         Created dashboards that tracked KPIs such as collection trends and outstanding balances.</p>
+      <p class="more-text">Gained experience in DAX measures, data cleaning, and relationship building. 
+         Collaborated with HR and analytics teams to enhance reporting efficiency. 
+         This internship boosted my ability to transform raw data into meaningful insights.</p>
+      <span class="read-more">Read More</span>
     </div>
-
-    <div class="card">
-      <h3>Sales & Collection Dashboard</h3>
-      <p>Created an interactive Power BI dashboard integrated with MySQL databases. Monitors live KPIs such as revenue, collections, and outstanding balances. Applied DAX for calculated metrics and trend forecasting. Provided stakeholders with actionable insights to make informed decisions quickly.</p>
-    </div>
-
-    <div class="card">
-      <h3>PSL Cricket Dashboard</h3>
-      <p>Analyzed Pakistan Super League (PSL) data across multiple seasons. Designed a Power BI dashboard with filters for teams, players, and venues. Visualized batting and bowling statistics with interactive charts. Delivered meaningful insights into player performance trends and team strategies.</p>
-    </div>
-
   </section>
 
   <!-- Contact -->
@@ -177,6 +218,22 @@
   <footer>
     <p>© 2025 Talha Khalid | All Rights Reserved</p>
   </footer>
+
+  <script>
+    // Expand/Collapse for Read More buttons
+    document.querySelectorAll(".read-more").forEach(button => {
+      button.addEventListener("click", () => {
+        const moreText = button.previousElementSibling;
+        if (moreText.style.display === "block") {
+          moreText.style.display = "none";
+          button.textContent = "Read More";
+        } else {
+          moreText.style.display = "block";
+          button.textContent = "Read Less";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
