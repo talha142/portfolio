@@ -1,143 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Talha Khalid | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f6f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
       color: #333;
     }
-
-    /* ===== Navbar ===== */
+    /* Navbar */
     nav {
-      background: #333;
-      padding: 15px 20px;
+      background: #1e293b;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      display: flex;
-      justify-content: center;
     }
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
+      margin: 0 1rem;
+      font-weight: 500;
     }
     nav a:hover {
-      color: #FFD700;
+      color: #38bdf8;
     }
-
-    header {
-      background: linear-gradient(135deg, #4A90E2, #007AFF);
-      color: white;
-      padding: 40px 20px;
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      animation: fadeInDown 0.5s ease-in-out; /* slow header animation */
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #2563eb, #38bdf8);
+      color: white;
     }
-
-    header h1 {
-      margin: 0;
+    .hero h1 {
       font-size: 2.5rem;
     }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 8px;
+    .hero p {
+      max-width: 600px;
     }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
+    /* Section */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: auto;
     }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #007AFF;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .read-more {
+    h2 {
+      color: #2563eb;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #2563eb;
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background: #007AFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      transition: background 0.3s;
+    }
+    /* Card */
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .read-more {
+      color: #2563eb;
       cursor: pointer;
+      font-weight: bold;
     }
-
-    .read-more:hover {
-      background: #0056b3;
-    }
-
-    .more-text {
+    .hidden {
       display: none;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      line-height: 1.6;
     }
-
+    /* Footer */
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
+      background: #1e293b;
       color: white;
-      margin-top: 40px;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @media(max-width:768px){
+      nav { flex-direction: column; }
     }
   </style>
 </head>
@@ -145,94 +94,102 @@
 
   <!-- Navbar -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    <div><strong>Talha Khalid</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <!-- Header -->
-  <header id="about">
-    <h1>Talha Khalid</h1>
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Hi, I'm Talha Khalid</h1>
     <p>Data Analyst | Python | SQL | Power BI | Machine Learning</p>
-  </header>
+  </div>
 
-  <!-- Projects -->
-  <section id="projects" class="container">
-
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
     <div class="card">
-      <h3>Air Quality Index Prediction</h3>
-      <p>Developed ML models to predict AQI using real-world datasets. 
-         The system was deployed on Streamlit for real-time predictions, enabling better air monitoring.</p>
-      <p class="more-text">Integrated data preprocessing, feature engineering, and regression models. 
-         Designed a clean dashboard for users to interact and visualize AQI levels effectively. 
-         This project demonstrated my ability to combine machine learning with interactive visualization.</p>
-      <span class="read-more">Read More</span>
+      <p>I am a passionate Data Analyst skilled in Python, SQL, Power BI, and Excel. I enjoy solving real-world problems through data visualization and machine learning.</p>
     </div>
-
-    <div class="card">
-      <h3>Mental Health NLP</h3>
-      <p>Built a Bi-LSTM-based NLP model to classify text into different mental health categories. 
-         Leveraged embeddings for better semantic understanding.</p>
-      <p class="more-text">The system helps detect early mental health patterns in conversations. 
-         Focused on precision and recall to ensure minimal misclassification. 
-         This project highlights my skills in deep learning and natural language processing for sensitive domains.</p>
-      <span class="read-more">Read More</span>
-    </div>
-
   </section>
 
-  <!-- Education -->
-  <section id="education" class="container">
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
     <div class="card">
-      <h3>Bachelor in Data Science</h3>
-      <p>Pursuing final year of Data Analytics at Government College University Faisalabad (GCUF). 
-         The curriculum includes advanced courses in machine learning, statistics, and big data analytics.</p>
-      <p class="more-text">I have applied concepts in real-world projects and gained strong experience in Python, SQL, Power BI, and Excel. 
-         My academic journey has been shaped by research, problem-solving, and continuous learning to stay aligned with industry trends.</p>
-      <span class="read-more">Read More</span>
+      <h3>Customer Analysis Dashboard</h3>
+      <p>This dashboard analyzes customer behavior, retention, and revenue trends.</p>
+      <span class="read-more" onclick="toggleDetail(this)">Read More</span>
+      <div class="hidden">
+        <p>Features include onboarding tracking, recurring revenue analysis, lifetime value segmentation (Gold, Platinum, Silver), and churn detection using Power BI & DAX.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Loan Prediction Model</h3>
+      <p>Predicts loan approval using machine learning algorithms.</p>
+      <span class="read-more" onclick="toggleDetail(this)">Read More</span>
+      <div class="hidden">
+        <p>Built with Python, pandas, scikit-learn, and Random Forest Classifier. Includes preprocessing, feature engineering, and accuracy evaluation.</p>
+      </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="container">
+  <section id="experience">
+    <h2>Experience</h2>
     <div class="card">
-      <h3>Internship at PEL Lahore</h3>
-      <p>Worked as a Data Analyst Intern at PEL where I designed and developed a MySQL database integrated with Power BI. 
-         Created dashboards that tracked KPIs such as collection trends and outstanding balances.</p>
-      <p class="more-text">Gained experience in DAX measures, data cleaning, and relationship building. 
-         Collaborated with HR and analytics teams to enhance reporting efficiency. 
-         This internship boosted my ability to transform raw data into meaningful insights.</p>
-      <span class="read-more">Read More</span>
+      <h3>Intern | PEL Lahore</h3>
+      <p>Worked on data cleaning, Power BI dashboards, and SQL database management.</p>
+      <span class="read-more" onclick="toggleDetail(this)">Read More</span>
+      <div class="hidden">
+        <p>Developed a collection dashboard, integrated MySQL with Power BI, created DAX measures, and automated reporting workflows. Worked under supervision of Ali Abbas (Superpower team) & Seemal Nawaz (HR).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="card">
+      <ul>
+        <li>Learning Data Analytics: Foundations (LinkedIn)</li>
+        <li>Getting Started with AWS Cloud</li>
+      </ul>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" style="padding:40px 20px; text-align:center;">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:talhakhalid142@gmail.com">talhakhalid142@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/talha-khalid-189092272/" target="_blank">Profile Link</a></p>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:talha@example.com">talha@example.com</a></p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/talha</a></p>
+      <p>GitHub: <a href="#">github.com/talha</a></p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Talha Khalid | All Rights Reserved</p>
+    <p>© 2025 Talha Khalid. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Expand/Collapse for Read More buttons
-    document.querySelectorAll(".read-more").forEach(button => {
-      button.addEventListener("click", () => {
-        const moreText = button.previousElementSibling;
-        if (moreText.style.display === "block") {
-          moreText.style.display = "none";
-          button.textContent = "Read More";
-        } else {
-          moreText.style.display = "block";
-          button.textContent = "Read Less";
-        }
-      });
-    });
+    function toggleDetail(element) {
+      const hiddenDiv = element.nextElementSibling;
+      if (hiddenDiv.classList.contains("hidden")) {
+        hiddenDiv.classList.remove("hidden");
+        element.innerText = "Read Less";
+      } else {
+        hiddenDiv.classList.add("hidden");
+        element.innerText = "Read More";
+      }
+    }
   </script>
 
 </body>
