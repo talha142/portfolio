@@ -92,10 +92,21 @@
     /* Projects Grid */
     .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
     .project {background:#334155; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.5); transition:transform 0.3s;}
-    .project:hover {transform:translateY(-5px);}
+    .project:hover {transform:translateY(-5px);} 
     .project-details {padding:15px;}
     .project-details h3 {margin-bottom:10px; color:#ff6600;}
     .project-details p {font-size:0.95rem; color:#ddd;}
+
+    /* Read More toggle */
+    .read-toggle {
+      display:inline-block; margin-top:10px; padding:8px 14px;
+      background:#ff6600; color:#fff; border:none; border-radius:20px; cursor:pointer;
+      font-weight:600; transition:.2s;
+    }
+    .read-toggle:hover { background:#e65c00; }
+    .more { display:none; margin-top:8px; }
+    .project.expanded .more { display:block; }
+    .project.expanded .project-details p.preview { display:none; }
 
     /* Contact Fix */
     #contact a {color:#ff6600; font-weight:600;}
@@ -145,23 +156,86 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects Section with Read More/Read Less -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project"><div class="project-details"><h3>Air Quality Index Prediction</h3><p>Built a machine learning model to predict AQI using multiple algorithms...</p></div></div>
-      <div class="project"><div class="project-details"><h3>Mental Health NLP</h3><p>Designed a deep learning model to classify mental health conditions...</p></div></div>
-      <div class="project"><div class="project-details"><h3>Medical RAG QA System</h3><p>Developed a Retrieval-Augmented Generation (RAG) system...</p></div></div>
-      <div class="project"><div class="project-details"><h3>Unique Human Count (YOLOv8)</h3><p>Implemented a real-time object detection system...</p></div></div>
-      <div class="project"><div class="project-details"><h3>Sales & Collection Dashboard</h3><p>Built interactive dashboards to analyze sales trends...</p></div></div>
-      <div class="project"><div class="project-details"><h3>PSL Cricket Dashboard</h3><p>Analyzed player and team performances across different grounds...</p></div></div>
+      <!-- AQI -->
+      <div class="project">
+        <div class="project-details">
+          <h3>Air Quality Index Prediction</h3>
+          <p class="preview">Built a machine learning model to predict AQI using multiple algorithms...</p>
+          <div class="more">
+            <p>Cleaned and pre-processed environmental datasets. Integrated the trained model into a user-friendly Streamlit web application for real-time predictions.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
+      <!-- Mental Health NLP -->
+      <div class="project">
+        <div class="project-details">
+          <h3>Mental Health NLP</h3>
+          <p class="preview">Designed a deep learning model to classify mental health conditions...</p>
+          <div class="more">
+            <p>Applied preprocessing techniques like tokenization, embeddings, and Bi-LSTM layers. Achieved reliable performance for real-world text classification across Depression, Anxiety, Stress, and Normal classes.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
+      <!-- Medical RAG -->
+      <div class="project">
+        <div class="project-details">
+          <h3>Medical RAG QA System</h3>
+          <p class="preview">Developed a Retrieval-Augmented Generation (RAG) system...</p>
+          <div class="more">
+            <p>Implemented embeddings with HuggingFace and a FAISS vector store for efficient retrieval from custom PDFs, delivering accurate and context-aware medical responses.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
+      <!-- YOLOv8 -->
+      <div class="project">
+        <div class="project-details">
+          <h3>Unique Human Count (YOLOv8)</h3>
+          <p class="preview">Implemented a real-time object detection system...</p>
+          <div class="more">
+            <p>Used YOLOv8 for robust detection and tracking to count unique humans in video streams—suitable for crowd management, surveillance, and smart city monitoring.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
+      <!-- Sales & Collection -->
+      <div class="project">
+        <div class="project-details">
+          <h3>Sales & Collection Dashboard</h3>
+          <p class="preview">Built interactive dashboards to analyze sales trends...</p>
+          <div class="more">
+            <p>Connected SQL queries with Power BI for live insights and designed custom KPIs using DAX for business reporting and overdue collection tracking.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
+      <!-- PSL Dashboard -->
+      <div class="project">
+        <div class="project-details">
+          <h3>PSL Cricket Dashboard</h3>
+          <p class="preview">Analyzed player and team performances across different grounds...</p>
+          <div class="more">
+            <p>Created visual insights for team-wise, ground-wise, and player-specific comparisons and delivered an engaging interactive dashboard for cricket analytics.</p>
+          </div>
+          <button class="read-toggle" aria-expanded="false">Read More</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Experience Section (full details always visible) -->
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience"><h3>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</h3><p>Built SQL queries & MySQL databases for structured sales data...</p></div>
+    <div class="experience">
+      <h3>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</h3>
+      <p>Built SQL queries & MySQL databases for structured sales data. Designed Power BI dashboards for sales & collections. Created DAX-based KPIs for business insights. Conducted data cleaning & reporting.</p>
+    </div>
   </section>
 
   <!-- Education Section -->
@@ -216,6 +290,16 @@
          }
         }
       );
+    });
+
+    // Read More / Read Less toggle for projects
+    document.querySelectorAll('.read-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.project');
+        const expanded = card.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', expanded);
+        btn.textContent = expanded ? 'Read Less' : 'Read More';
+      });
     });
   </script>
 
