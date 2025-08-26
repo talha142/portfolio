@@ -5,104 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talha Khalid | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 2rem 5%;
-      background: #fff;
-      margin: 1rem auto;
-      max-width: 1000px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      color: #444;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #ddd;
-      display: inline-block;
-      padding-bottom: .3rem;
-    }
-    .project {
-      margin-bottom: 2rem;
-    }
-    .project img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #1e90ff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5;}
+    header {text-align: center; padding: 2rem 1rem; background: #111; color: #fff;}
+    header h1 {font-size: 2.5rem;}
+    header p {margin-top: 0.5rem; font-size: 1.2rem;}
+
+    section {max-width: 1000px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+    section h2 {margin-bottom: 1rem; font-size: 1.8rem; color: #222; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem;}
+
+    .project {margin-bottom: 2rem;}
+    .project img {width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px; margin-top: 1rem;}
+    .project h3 {margin: 1rem 0 0.5rem; font-size: 1.4rem; color: #111;}
+    .project p {margin-bottom: 0.5rem;}
+    .project a {display: inline-block; margin-top: 0.5rem; text-decoration: none; color: #0073e6; font-weight: bold;}
+
+    ul {margin-left: 1.2rem; margin-bottom: 1rem;}
+
+    footer {text-align: center; padding: 2rem; background: #111; color: #fff;}
+    footer a {color: #fff; margin: 0 10px; text-decoration: none;}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Talha Khalid</h1>
-    <p>Data Analyst | Aspiring Machine Learning Engineer</p>
+    <p>Data Analyst | Machine Learning Enthusiast</p>
   </header>
 
   <!-- About Me -->
   <section>
-    <h2>👤 About Me</h2>
+    <h2>About Me</h2>
     <p>
       I am Talha Khalid, a passionate Data Analyst and aspiring Machine Learning Engineer with a strong background in building data-driven solutions. 
-      I specialize in transforming raw data into meaningful insights using Python, Power BI, SQL, and Machine Learning models. 
+      I specialize in transforming raw data into meaningful insights through tools like Python, Power BI, SQL, and Machine Learning models. 
       My focus is on solving real-world business problems, delivering client-focused solutions, and developing applications that combine analytics with automation.
     </p>
   </section>
 
   <!-- Education -->
   <section>
-    <h2>🎓 Education</h2>
+    <h2>Education</h2>
     <p><strong>BS Data Analytics (2021 – 2025)</strong><br>Government College University, Faisalabad</p>
-    <p><em>Final Year Project:</em> Air Quality Index Prediction – A machine learning–based system to predict AQI trends and analyze pollution levels.</p>
+    <p><em>Final Year Project (FYP): Air Quality Index Prediction – A machine learning–based system to predict AQI trends and analyze pollution levels.</em></p>
   </section>
 
   <!-- Projects -->
   <section>
-    <h2>🚀 Projects</h2>
+    <h2>Projects</h2>
 
     <div class="project">
       <h3>Air Quality Index Prediction</h3>
       <p><strong>Problem:</strong> Urban areas face challenges in monitoring and predicting AQI trends.</p>
       <p><strong>Solution:</strong> Developed a machine learning web app using Streamlit that predicts AQI and visualizes pollution levels.</p>
       <p><strong>Technologies:</strong> Python, Streamlit, Scikit-learn, XGBoost, Pandas, Matplotlib</p>
-      <img src="img/projects/aqi.png" alt="Air Quality Index Prediction">
-      <p><a href="https://github.com/talha142/AQI-Project" target="_blank">🔗 GitHub Link</a></p>
+      <img src="img/projects/AQI project.png" alt="AQI Project">
+      <a href="https://github.com/talha142/AQI">🔗 GitHub Link</a>
     </div>
 
     <div class="project">
@@ -110,8 +68,7 @@
       <p><strong>Problem:</strong> Manual human counting in public places is inaccurate and time-consuming.</p>
       <p><strong>Solution:</strong> Built a video analytics system to detect and count unique humans in video footage automatically.</p>
       <p><strong>Technologies:</strong> YOLO, OpenCV, NumPy, Deep Learning</p>
-      <img src="img/projects/human_count.png" alt="Human Counting Project">
-      <p><em>GitHub link not available</em></p>
+      <img src="img/projects/humman count.png" alt="Human Count Project">
     </div>
 
     <div class="project">
@@ -120,7 +77,6 @@
       <p><strong>Solution:</strong> Built a Medical Chatbot using RAG and NLP techniques to provide accurate and context-aware responses.</p>
       <p><strong>Technologies:</strong> Python, NLP, RAG pipeline, Transformer-based LLM</p>
       <img src="img/projects/rag.png" alt="Medical Chatbot Project">
-      <p><a href="https://github.com/talha142/Medical-Chatbot-RAG" target="_blank">🔗 GitHub Link</a></p>
     </div>
 
     <div class="project">
@@ -129,32 +85,33 @@
       <p><strong>Solution:</strong> Designed a Power BI dashboard connected to MySQL and Excel for real-time KPI tracking.</p>
       <p><strong>Technologies:</strong> Power BI, MySQL, Excel</p>
       <img src="img/projects/sales.png" alt="Sales Dashboard">
-      <p><a href="https://github.com/talha142/PowerBI-Project" target="_blank">🔗 GitHub Link</a></p>
+      <a href="https://github.com/talha142/PowerBI-Project">🔗 GitHub Link</a>
     </div>
 
     <div class="project">
-      <h3>PSL Batting Analytics</h3>
+      <h3>PSL Batting Analytics (2020–2024)</h3>
       <p><strong>Problem:</strong> Extracting insights from PSL batting statistics manually is time-consuming.</p>
       <p><strong>Solution:</strong> Created a batting analytics model to analyze batting averages, strike rates, and player comparisons.</p>
       <p><strong>Technologies:</strong> Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook</p>
-      <img src="img/projects/psl.png" alt="PSL Analytics Project">
-      <p><a href="https://github.com/talha142/PSL-Analytics" target="_blank">🔗 GitHub Link</a></p>
+      <img src="img/projects/psl.png" alt="PSL Project">
+      <a href="https://github.com/talha142/PSL-Analytics">🔗 GitHub Link</a>
     </div>
   </section>
 
   <!-- Experience -->
   <section>
-    <h2>💼 Experience</h2>
+    <h2>Experience</h2>
     <p><strong>Data Analyst Intern (July 2024 – August 2024)</strong></p>
     <p>
-      Developed an interactive Sales & Collection dashboard using <strong>Power BI</strong>, <strong>MySQL</strong>, and <strong>Excel</strong>. 
-      Connected databases, cleaned & transformed data, and designed KPI-focused visuals to deliver an end-to-end insight solution for stakeholders.
+      Developed an interactive Sales & Collection dashboard using Power BI, MySQL, and Excel. 
+      Connected databases, cleaned & transformed data, and designed KPI-focused visuals to deliver 
+      an end-to-end insight solution for stakeholders.
     </p>
   </section>
 
   <!-- Certifications -->
   <section>
-    <h2>📜 Certifications</h2>
+    <h2>Certifications</h2>
     <ul>
       <li>Data Analytics – LinkedIn Learning</li>
       <li>Introducing Generative AI with AWS – Udacity</li>
@@ -164,7 +121,7 @@
 
   <!-- Achievements -->
   <section>
-    <h2>🏆 Achievements</h2>
+    <h2>Achievements</h2>
     <ul>
       <li>Kaggle Expert in Notebooks and Datasets with active contributions.</li>
       <li>Successfully built multiple end-to-end data projects integrating ML, NLP, and BI tools.</li>
@@ -174,7 +131,7 @@
 
   <!-- Skills -->
   <section>
-    <h2>🛠 Skills</h2>
+    <h2>Skills</h2>
     <ul>
       <li><strong>Programming:</strong> Python, SQL, R, JavaScript</li>
       <li><strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
@@ -186,12 +143,12 @@
 
   <!-- Contact -->
   <footer>
-    <p>📞 0310 7708080</p>
+    <p>📱 0310 7708080</p>
     <p>
-      <a href="https://github.com/talha142" target="_blank">GitHub</a> |
-      <a href="https://kaggle.com/talhachoudary" target="_blank">Kaggle</a> |
-      <a href="https://linkedin.com/in/talha-khalid-189092272" target="_blank">LinkedIn</a> |
-      <a href="https://fiverr.com/talhakhalid792" target="_blank">Fiverr</a>
+      <a href="https://github.com/talha142">GitHub</a> |
+      <a href="https://kaggle.com/talhachoudary">Kaggle</a> |
+      <a href="https://linkedin.com/in/talha-khalid-189092272">LinkedIn</a> |
+      <a href="https://fiverr.com/talhakhalid792">Fiverr</a>
     </p>
   </footer>
 
