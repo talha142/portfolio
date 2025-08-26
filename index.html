@@ -5,157 +5,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talha Khalid | Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f8f9fa; color: #333; }
-    .container { width: 90%; max-width: 1100px; margin: auto; padding: 40px 0; }
-    h1, h2, h3 { margin-bottom: 20px; color: #222; }
-    h1 { font-size: 2.5rem; text-align: center; margin-bottom: 40px; }
-    h2 { font-size: 1.8rem; border-bottom: 3px solid #007bff; display: inline-block; padding-bottom: 5px; }
-    section { margin-bottom: 60px; }
-    p { margin-bottom: 10px; }
-
-    /* Cards */
-    .card { background: #fff; padding: 20px; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
-    .tech { font-size: 0.9rem; color: #555; margin-top: 8px; }
-    .link { margin-top: 10px; display: inline-block; text-decoration: none; color: #007bff; font-weight: bold; }
-
-    /* Contact */
-    .contact { text-align: center; }
-    .contact a { display: inline-block; margin: 10px; text-decoration: none; color: #007bff; font-weight: bold; }
-
-    /* Lists */
-    ul { margin-left: 20px; margin-top: 10px; }
-    li { margin-bottom: 5px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 2rem 5%;
+      background: #fff;
+      margin: 1rem auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #444;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      display: inline-block;
+      padding-bottom: .3rem;
+    }
+    .project {
+      margin-bottom: 2rem;
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Header -->
+  <header>
+    <h1>Talha Khalid</h1>
+    <p>Data Analyst | Aspiring Machine Learning Engineer</p>
+  </header>
 
-    <h1>Talha Khalid | Portfolio</h1>
+  <!-- About Me -->
+  <section>
+    <h2>👤 About Me</h2>
+    <p>
+      I am Talha Khalid, a passionate Data Analyst and aspiring Machine Learning Engineer with a strong background in building data-driven solutions. 
+      I specialize in transforming raw data into meaningful insights using Python, Power BI, SQL, and Machine Learning models. 
+      My focus is on solving real-world business problems, delivering client-focused solutions, and developing applications that combine analytics with automation.
+    </p>
+  </section>
 
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am Talha Khalid, a passionate Data Analyst and aspiring Machine Learning Engineer with a strong background in building data-driven solutions. 
-      I specialize in transforming raw data into meaningful insights through tools like Python, Power BI, SQL, and Machine Learning models. 
-      My focus is on solving real-world business problems, delivering client-focused solutions, and developing applications that combine analytics with automation.</p>
-    </section>
+  <!-- Education -->
+  <section>
+    <h2>🎓 Education</h2>
+    <p><strong>BS Data Analytics (2021 – 2025)</strong><br>Government College University, Faisalabad</p>
+    <p><em>Final Year Project:</em> Air Quality Index Prediction – A machine learning–based system to predict AQI trends and analyze pollution levels.</p>
+  </section>
 
-    <!-- Education -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>BS Data Analytics (2021 – 2025)</h3>
-        <p>Government College University, Faisalabad</p>
-        <p>Final Year Project (FYP): Air Quality Index Prediction – A machine learning–based system to predict AQI trends and analyze pollution levels.</p>
-      </div>
-    </section>
+  <!-- Projects -->
+  <section>
+    <h2>🚀 Projects</h2>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <div class="project">
+      <h3>Air Quality Index Prediction</h3>
+      <p><strong>Problem:</strong> Urban areas face challenges in monitoring and predicting AQI trends.</p>
+      <p><strong>Solution:</strong> Developed a machine learning web app using Streamlit that predicts AQI and visualizes pollution levels.</p>
+      <p><strong>Technologies:</strong> Python, Streamlit, Scikit-learn, XGBoost, Pandas, Matplotlib</p>
+      <img src="img/projects/aqi.png" alt="Air Quality Index Prediction">
+      <p><a href="https://github.com/talha142/AQI-Project" target="_blank">🔗 GitHub Link</a></p>
+    </div>
 
-      <div class="card">
-        <img src="img/projects/AQI project.png" alt="AQI Project">
-        <h3>Air Quality Index Prediction</h3>
-        <p><b>Problem:</b> Urban areas face challenges in monitoring and predicting AQI trends.</p>
-        <p><b>Solution:</b> Developed a machine learning web app using Streamlit that predicts AQI and visualizes pollution levels.</p>
-        <p class="tech"><b>Technologies:</b> Python, Streamlit, Scikit-learn, XGBoost, Pandas, Matplotlib</p>
-        <a class="link" href="#">GitHub Link: AQI Project</a>
-      </div>
+    <div class="project">
+      <h3>Human Counting using Video Analytics</h3>
+      <p><strong>Problem:</strong> Manual human counting in public places is inaccurate and time-consuming.</p>
+      <p><strong>Solution:</strong> Built a video analytics system to detect and count unique humans in video footage automatically.</p>
+      <p><strong>Technologies:</strong> YOLO, OpenCV, NumPy, Deep Learning</p>
+      <img src="img/projects/human_count.png" alt="Human Counting Project">
+      <p><em>GitHub link not available</em></p>
+    </div>
 
-      <div class="card">
-        <img src="img/projects/humman count.png" alt="Human Count Project">
-        <h3>Human Counting using Video Analytics</h3>
-        <p><b>Problem:</b> Manual human counting in public places is inaccurate and time-consuming.</p>
-        <p><b>Solution:</b> Built a video analytics system to detect and count unique humans in video footage automatically.</p>
-        <p class="tech"><b>Technologies:</b> YOLO, OpenCV, NumPy, Deep Learning</p>
-        <a class="link" href="#">GitHub Link (Not Available)</a>
-      </div>
+    <div class="project">
+      <h3>Medical Chatbot (RAG-based)</h3>
+      <p><strong>Problem:</strong> Healthcare queries require quick and reliable responses.</p>
+      <p><strong>Solution:</strong> Built a Medical Chatbot using RAG and NLP techniques to provide accurate and context-aware responses.</p>
+      <p><strong>Technologies:</strong> Python, NLP, RAG pipeline, Transformer-based LLM</p>
+      <img src="img/projects/rag.png" alt="Medical Chatbot Project">
+      <p><a href="https://github.com/talha142/Medical-Chatbot-RAG" target="_blank">🔗 GitHub Link</a></p>
+    </div>
 
-      <div class="card">
-        <img src="img/projects/rag.png" alt="Medical Chatbot">
-        <h3>Medical Chatbot (RAG-based)</h3>
-        <p><b>Problem:</b> Healthcare queries require quick and reliable responses.</p>
-        <p><b>Solution:</b> Built a Medical Chatbot using RAG and NLP techniques to provide accurate and context-aware responses.</p>
-        <p class="tech"><b>Technologies:</b> Python, NLP, RAG pipeline, Transformer-based LLM</p>
-        <a class="link" href="#">GitHub Link: Medical Chatbot</a>
-      </div>
+    <div class="project">
+      <h3>Sales & Collection Dashboard</h3>
+      <p><strong>Problem:</strong> Businesses struggle to track sales and collections across multiple sources.</p>
+      <p><strong>Solution:</strong> Designed a Power BI dashboard connected to MySQL and Excel for real-time KPI tracking.</p>
+      <p><strong>Technologies:</strong> Power BI, MySQL, Excel</p>
+      <img src="img/projects/sales.png" alt="Sales Dashboard">
+      <p><a href="https://github.com/talha142/PowerBI-Project" target="_blank">🔗 GitHub Link</a></p>
+    </div>
 
-      <div class="card">
-        <img src="img/projects/sales.png" alt="Sales Dashboard">
-        <h3>Sales & Collection Dashboard</h3>
-        <p><b>Problem:</b> Businesses struggle to track sales and collections across multiple sources.</p>
-        <p><b>Solution:</b> Designed a Power BI dashboard connected to MySQL and Excel for real-time KPI tracking.</p>
-        <p class="tech"><b>Technologies:</b> Power BI, MySQL, Excel</p>
-        <a class="link" href="#">GitHub Link: Power BI Project</a>
-      </div>
+    <div class="project">
+      <h3>PSL Batting Analytics</h3>
+      <p><strong>Problem:</strong> Extracting insights from PSL batting statistics manually is time-consuming.</p>
+      <p><strong>Solution:</strong> Created a batting analytics model to analyze batting averages, strike rates, and player comparisons.</p>
+      <p><strong>Technologies:</strong> Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook</p>
+      <img src="img/projects/psl.png" alt="PSL Analytics Project">
+      <p><a href="https://github.com/talha142/PSL-Analytics" target="_blank">🔗 GitHub Link</a></p>
+    </div>
+  </section>
 
-      <div class="card">
-        <img src="img/projects/psl.png" alt="PSL Analytics">
-        <h3>PSL Batting Analytics (2020–2024)</h3>
-        <p><b>Problem:</b> Extracting insights from PSL batting statistics manually is time-consuming.</p>
-        <p><b>Solution:</b> Created a batting analytics model to analyze batting averages, strike rates, and player comparisons.</p>
-        <p class="tech"><b>Technologies:</b> Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook</p>
-        <a class="link" href="#">GitHub Link: PSL Project</a>
-      </div>
+  <!-- Experience -->
+  <section>
+    <h2>💼 Experience</h2>
+    <p><strong>Data Analyst Intern (July 2024 – August 2024)</strong></p>
+    <p>
+      Developed an interactive Sales & Collection dashboard using <strong>Power BI</strong>, <strong>MySQL</strong>, and <strong>Excel</strong>. 
+      Connected databases, cleaned & transformed data, and designed KPI-focused visuals to deliver an end-to-end insight solution for stakeholders.
+    </p>
+  </section>
 
-    </section>
+  <!-- Certifications -->
+  <section>
+    <h2>📜 Certifications</h2>
+    <ul>
+      <li>Data Analytics – LinkedIn Learning</li>
+      <li>Introducing Generative AI with AWS – Udacity</li>
+      <li>Getting Started with AWS Cloud Essentials – AWS Training & Certification</li>
+    </ul>
+  </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="card">
-        <h3>Data Analyst Intern (July 2024 – August 2024)</h3>
-        <p>Developed an interactive <b>Sales & Collection dashboard</b> using <b>Power BI, MySQL, and Excel</b>. Connected databases, cleaned & transformed data, 
-        and designed KPI-focused visuals to deliver an end-to-end insight solution for stakeholders.</p>
-      </div>
-    </section>
+  <!-- Achievements -->
+  <section>
+    <h2>🏆 Achievements</h2>
+    <ul>
+      <li>Kaggle Expert in Notebooks and Datasets with active contributions.</li>
+      <li>Successfully built multiple end-to-end data projects integrating ML, NLP, and BI tools.</li>
+      <li>Recognized for creating impactful dashboards and predictive analytics models.</li>
+    </ul>
+  </section>
 
-    <!-- Certifications -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Data Analytics – LinkedIn Learning</li>
-        <li>Introducing Generative AI with AWS – Udacity</li>
-        <li>Getting Started with AWS Cloud Essentials – AWS Training & Certification</li>
-      </ul>
-    </section>
+  <!-- Skills -->
+  <section>
+    <h2>🛠 Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python, SQL, R, JavaScript</li>
+      <li><strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
+      <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
+      <li><strong>Machine Learning & AI:</strong> Scikit-learn, TensorFlow, XGBoost, NLP, YOLO, RAG</li>
+      <li><strong>Tools & Platforms:</strong> GitHub, Kaggle, Streamlit, Jupyter Notebook</li>
+    </ul>
+  </section>
 
-    <!-- Achievements -->
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Kaggle Expert in Notebooks and Datasets with active contributions.</li>
-        <li>Successfully built multiple end-to-end data projects integrating ML, NLP, and BI tools.</li>
-        <li>Recognized for creating impactful dashboards and predictive analytics models.</li>
-      </ul>
-    </section>
+  <!-- Contact -->
+  <footer>
+    <p>📞 0310 7708080</p>
+    <p>
+      <a href="https://github.com/talha142" target="_blank">GitHub</a> |
+      <a href="https://kaggle.com/talhachoudary" target="_blank">Kaggle</a> |
+      <a href="https://linkedin.com/in/talha-khalid-189092272" target="_blank">LinkedIn</a> |
+      <a href="https://fiverr.com/talhakhalid792" target="_blank">Fiverr</a>
+    </p>
+  </footer>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><b>Programming:</b> Python, SQL, R, JavaScript</li>
-        <li><b>Data Analytics & Visualization:</b> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
-        <li><b>Databases:</b> MySQL, PostgreSQL</li>
-        <li><b>Machine Learning & AI:</b> Scikit-learn, TensorFlow, XGBoost, NLP, YOLO, RAG</li>
-        <li><b>Tools & Platforms:</b> GitHub, Kaggle, Streamlit, Jupyter Notebook</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <a href="tel:03107708080">📱 Phone</a>
-      <a href="https://github.com/talha142">🌐 GitHub</a>
-      <a href="https://kaggle.com/talhachoudary">🌐 Kaggle</a>
-      <a href="https://linkedin.com/in/talha-khalid-189092272">🔗 LinkedIn</a>
-      <a href="https://fiverr.com/talhakhalid792">🎯 Fiverr</a>
-    </section>
-
-  </div>
 </body>
 </html>
