@@ -3,305 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talha Khalid | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Akram Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-    body {background:#0f172a; color:#fff; line-height:1.6;}
-    html {scroll-behavior:smooth; scroll-padding-top:80px;}
+    /* General Styles */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+    body { scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #1e293b;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; /* ✅ mobile fix */
-      gap: 25px;
-      z-index: 1001;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    nav a {color:#fff; text-decoration:none; font-weight:500; transition:0.3s;}
-    nav a:hover {color:#ff6600;}
+    /* Header */
+    header { position: fixed; top:0; left:0; width:100%; background:#0a192f; color:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+    header nav a { margin-left: 20px; font-weight:500; transition:0.3s; }
+    header nav a:hover { color:#00bfff; }
 
-    /* Hero / Header */
-    header {
-      position: relative;  /* ✅ fixed removed */
-      width: 100%;
-      min-height: 100vh;   /* ✅ full screen */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(120deg,#1a2a6c,#b21f1f,#fdbb2d);
-      background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
-      z-index: 500;
-    }
-    @keyframes gradientMove {
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
-    header img {
-      width:150px; height:150px; border-radius:50%; border:4px solid #fff;
-      margin-bottom:20px; object-fit:cover; background:#fff;
-    }
-    header h1 {font-size:3rem; margin-bottom:10px;}
-    header p {font-size:1.3rem;}
-    .download-btn {
-      display:inline-block;
-      padding:12px 30px;
-      margin-top:25px;
-      background:#ff6600;
-      color:#fff;
-      text-decoration:none;
-      border-radius:50px;
-      font-weight:bold;
-      box-shadow:0 4px 15px rgba(0,0,0,0.5);
-      transition:0.3s;
-    }
-    .download-btn:hover {background:#e65c00; transform:scale(1.08);}
+    /* Hero Section */
+    .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#112240; color:#fff; text-align:center; padding:0 20px; }
+    .hero h1 { font-size:3rem; margin-bottom:10px; }
+    .hero p { font-size:1.2rem; margin-bottom:20px; }
+    .hero a { background:#00bfff; color:#fff; padding:10px 20px; border-radius:5px; font-weight:500; transition:0.3s; }
+    .hero a:hover { background:#0080ff; }
 
-    /* Section */
-    section {
-      padding: 100px 20px;
-      max-width:1100px;
-      margin: 0 auto 60px auto;
-      background:#1e293b;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.4);
-    }
-    h2 {margin-bottom:20px; color:#ff6600; font-size:2.2rem; border-bottom:2px solid #444; display:inline-block; padding-bottom:8px;}
-    .skills span, .achievements span {
-      display:inline-block;
-      background:#334155;
-      padding:10px 15px;
-      margin:6px;
-      border-radius:25px;
-      box-shadow:0 3px 7px rgba(0,0,0,0.5);
-      transition:transform 0.3s, box-shadow 0.3s;
-    }
-    .skills span:hover, .achievements span:hover {transform:scale(1.1); box-shadow:0 0 15px #ff6600;}
+    /* Sections */
+    section { padding:100px 50px; }
+    section h2 { font-size:2rem; margin-bottom:40px; color:#0a192f; text-align:center; }
 
-    /* Projects Grid */
-    .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
-    .project {background:#334155; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.5); transition:transform 0.3s;}
-    .project:hover {transform:translateY(-5px);} 
-    .project-details {padding:15px;}
-    .project-details h3 {margin-bottom:10px; color:#ff6600;}
-    .project-details p {font-size:0.95rem; color:#ddd;}
+    /* Skills Section */
+    .skills-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    .skill-card { background:#f0f0f0; padding:20px; border-radius:10px; width:200px; text-align:center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .skill-card h3 { margin-bottom:10px; color:#0a192f; }
+    .progress { background:#ddd; border-radius:5px; overflow:hidden; height:10px; margin-top:5px; }
+    .progress-bar { height:100%; background:#00bfff; width:0; transition:1s ease-in-out; }
 
-    /* Read More toggle */
-    .read-toggle {
-      display:inline-block; margin-top:10px; padding:8px 14px;
-      background:#ff6600; color:#fff; border:none; border-radius:20px; cursor:pointer;
-      font-weight:600; transition:.2s;
-    }
-    .read-toggle:hover { background:#e65c00; }
-    .more { display:none; margin-top:8px; }
-    .project.expanded .more { display:block; }
-    .project.expanded .project-details p.preview { display:none; }
+    /* Projects Section */
+    .projects-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    .project-card { background:#f0f0f0; width:300px; border-radius:10px; overflow:hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+    .project-card:hover { transform: translateY(-10px); }
+    .project-card img { width:100%; height:180px; object-fit:cover; }
+    .project-card .content { padding:15px; }
+    .project-card h3 { margin-bottom:10px; color:#0a192f; }
+    .project-card p { font-size:0.9rem; margin-bottom:10px; color:#333; }
+    .project-card a { color:#00bfff; font-weight:500; }
 
-    /* Contact Fix */
-    #contact a {color:#ff6600; font-weight:600;}
-    #contact a:hover {text-decoration: underline;}
+    /* Contact Section */
+    .contact-container { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+    .contact-card { background:#f0f0f0; padding:20px; border-radius:10px; width:200px; text-align:center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+    .contact-card:hover { transform: translateY(-10px); }
+    .contact-card h3 { margin-bottom:10px; color:#0a192f; }
+    .contact-card a { color:#00bfff; font-weight:500; }
 
-    footer {text-align:center; background:#0f172a; color:#aaa; padding:25px; margin-top:40px; border-top:1px solid #333;}
+    /* Footer */
+    footer { text-align:center; padding:20px; background:#0a192f; color:#fff; }
+
+    /* Responsive */
+    @media(max-width:768px){ header { padding:15px 20px;} section { padding:80px 20px; } .skills-container, .projects-container, .contact-container { flex-direction:column; align-items:center;} }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <!-- Header -->
   <header>
-    <img src="profile.jpg" alt="Profile">
-    <h1>Talha Khalid</h1>
-    <p>Data Analyst | Machine Learning & Deep Learning Enthusiast</p>
-    <a href="TALHA-CV.pdf" download class="download-btn">⬇ Download CV</a>
+    <h2>Akram</h2>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am <b>Talha Khalid</b>, a <b>BS Data Analytics graduate</b> from <b>Government College University, Faisalabad (2021–2025)</b>. My final year project was an <b>Air Quality Index Prediction Web App</b> using machine learning and Streamlit.</p>
-    <p>I have hands-on experience in <b>Machine Learning, Deep Learning, NLP, RAG-based AI systems, and Data Visualization</b>. Along with strong skills in SQL, Power BI, and Python, I enjoy solving real-world problems through data-driven insights.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Hello, I'm Akram</h1>
+    <p>Final Year Data Analytics Student | Python, SQL, Power BI</p>
+    <a href="#">Download CV</a>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span><span>SQL</span><span>MySQL</span><span>Excel</span>
-      <span>Scikit-learn</span><span>Keras</span><span>LSTM</span>
-      <span>Power BI</span><span>Streamlit</span><span>Matplotlib</span>
-      <span>NLP</span><span>RAG Systems</span><span>LangChain</span>
-      <span>HuggingFace</span><span>Communication</span><span>Problem Solving</span>
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <h3>Python</h3>
+        <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>SQL</h3>
+        <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>Power BI</h3>
+        <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>Excel</h3>
+        <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- Projects Section with Read More/Read Less -->
+  <!-- Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- AQI -->
-      <div class="project">
-        <div class="project-details">
-          <h3>Air Quality Index Prediction</h3>
-          <p class="preview">Built a machine learning model to predict AQI using multiple algorithms...</p>
-          <div class="more">
-            <p>Cleaned and pre-processed environmental datasets. Integrated the trained model into a user-friendly Streamlit web application for real-time predictions.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="project1.png" alt="Project 1">
+        <div class="content">
+          <h3>Loan Prediction</h3>
+          <p>Predicting loan acceptance using Python & Random Forest.</p>
+          <a href="#">View Project</a>
         </div>
       </div>
-      <!-- Mental Health NLP -->
-      <div class="project">
-        <div class="project-details">
-          <h3>Mental Health NLP</h3>
-          <p class="preview">Designed a deep learning model to classify mental health conditions...</p>
-          <div class="more">
-            <p>Applied preprocessing techniques like tokenization, embeddings, and Bi-LSTM layers. Achieved reliable performance for real-world text classification across Depression, Anxiety, Stress, and Normal classes.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
+      <div class="project-card">
+        <img src="project2.png" alt="Project 2">
+        <div class="content">
+          <h3>Crop Price Prediction</h3>
+          <p>Analyzing crop prices and predicting future trends using ML.</p>
+          <a href="#">View Project</a>
         </div>
       </div>
-      <!-- Medical RAG -->
-      <div class="project">
-        <div class="project-details">
-          <h3>Medical RAG QA System</h3>
-          <p class="preview">Developed a Retrieval-Augmented Generation (RAG) system...</p>
-          <div class="more">
-            <p>Implemented embeddings with HuggingFace and a FAISS vector store for efficient retrieval from custom PDFs, delivering accurate and context-aware medical responses.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
+      <div class="project-card">
+        <img src="project3.png" alt="Project 3">
+        <div class="content">
+          <h3>Customer Analysis Dashboard</h3>
+          <p>Power BI dashboard showing customer insights and KPIs.</p>
+          <a href="#">View Project</a>
         </div>
       </div>
-      <!-- YOLOv8 -->
-      <div class="project">
-        <div class="project-details">
-          <h3>Unique Human Count (YOLOv8)</h3>
-          <p class="preview">Implemented a real-time object detection system...</p>
-          <div class="more">
-            <p>Used YOLOv8 for robust detection and tracking to count unique humans in video streams—suitable for crowd management, surveillance, and smart city monitoring.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
-        </div>
-      </div>
-      <!-- Sales & Collection -->
-      <div class="project">
-        <div class="project-details">
-          <h3>Sales & Collection Dashboard</h3>
-          <p class="preview">Built interactive dashboards to analyze sales trends...</p>
-          <div class="more">
-            <p>Connected SQL queries with Power BI for live insights and designed custom KPIs using DAX for business reporting and overdue collection tracking.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
-        </div>
-      </div>
-      <!-- PSL Dashboard -->
-      <div class="project">
-        <div class="project-details">
-          <h3>PSL Cricket Dashboard</h3>
-          <p class="preview">Analyzed player and team performances across different grounds...</p>
-          <div class="more">
-            <p>Created visual insights for team-wise, ground-wise, and player-specific comparisons and delivered an engaging interactive dashboard for cricket analytics.</p>
-          </div>
-          <button class="read-toggle" aria-expanded="false">Read More</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section (full details always visible) -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <h3>Data Analytics Intern — PEL, Lahore (July–Aug 2024)</h3>
-      <p>Built SQL queries & MySQL databases for structured sales data. Designed Power BI dashboards for sales & collections. Created DAX-based KPIs for business insights. Conducted data cleaning & reporting.</p>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education"><h3>BS Data Analytics</h3><p>Government College University, Faisalabad (2021–2025)</p><p>Final Year Project: AQI Prediction Web App</p></div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certifications">
-      <p>Learning Data Analytics: Foundations — LinkedIn Learning (2024)</p>
-      <p>Getting Started with AWS Cloud Essentials</p>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <div class="achievements">
-      <span>Kaggle Notebook Expert</span>
-      <span>Kaggle Dataset Expert</span>
-      <span>Kaggle Discussion Expert</span>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:talhakhalid142@gmail.com">talhakhalid142@gmail.com</a></p>
-    <p>Phone: +92-310-7708080</p>
-    <p><a href="https://www.linkedin.com/in/talha-khalid-189092272/">LinkedIn</a> | <a href="https://github.com/talha142">GitHub</a> | <a href="https://www.kaggle.com/talhachoudary">Kaggle</a> | <a href="https://www.fiverr.com/users/talhakhalid792">Fiverr</a></p>
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <a href="mailto:akram@example.com">akram@example.com</a>
+      </div>
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <a href="#">linkedin.com/in/akram</a>
+      </div>
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <a href="#">github.com/akram</a>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Talha Khalid | Portfolio</p>
+    &copy; 2025 Akram. All rights reserved.
   </footer>
-
-  <!-- GSAP Animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('section').forEach(section=>{
-      gsap.fromTo(section,
-        {opacity:0, y:50},
-        {opacity:1, y:0, duration:1, ease:'power2.out',
-         scrollTrigger:{
-           trigger:section,
-           start:'top 80%'
-         }
-        }
-      );
-    });
-
-    // Read More / Read Less toggle for projects
-    document.querySelectorAll('.read-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.project');
-        const expanded = card.classList.toggle('expanded');
-        btn.setAttribute('aria-expanded', expanded);
-        btn.textContent = expanded ? 'Read Less' : 'Read More';
-      });
-    });
-  </script>
 
 </body>
 </html>
