@@ -3,258 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Talha Khalid | Portfolio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5;}
 
     header {
-      background: linear-gradient(135deg, #0077ff, #00c6ff);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
+      text-align: center; padding: 2rem 1rem; background: #111; color: #fff;
+    }
+    header h1 {font-size: 2.5rem;}
+    header p {margin-top: 0.5rem; font-size: 1.2rem;}
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header p {
-      margin: 10px 0 20px;
-      font-size: 1.2rem;
-    }
-
-    .btn {
-      background: white;
-      color: #0077ff;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e0e0e0;
+    .left-col, .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #0077ff;
-    }
-
-    /* About Section */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    #about img {
-      width: 100%;
-      border-radius: 50%;
-      max-width: 250px;
-      margin: auto;
-      display: block;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    #about .about-text {
-      font-size: 1.1rem;
-    }
-
-    /* Experience, Education, Certifications, Achievements */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .info-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .info-card h3 {
-      color: #0077ff;
-      margin-bottom: 10px;
-    }
-
-    /* Projects */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .project-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .project-img:hover {
-      transform: scale(1.05);
-    }
-
-    .project-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    /* Skills */
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .skill {
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
+      background: #fff; 
+      padding: 1.5rem; 
+      border-radius: 10px; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+    }
+    section h2 {
+      margin-bottom: 1rem; 
+      font-size: 1.6rem; 
+      color: #222; 
+      border-bottom: 2px solid #ddd; 
+      padding-bottom: 0.5rem;
+    }
+
+    .profile-pic {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .project {margin-bottom: 2rem;}
+    .project img {
+      width: 100%; 
+      height: auto; /* Prevent cropping */
+      border-radius: 10px; 
+      margin-top: 1rem;
+    }
+    .project h3 {margin: 1rem 0 0.5rem; font-size: 1.4rem; color: #111;}
+    .project p {margin-bottom: 0.5rem;}
+    .project a {
+      display: inline-block; 
+      margin-top: 0.5rem; 
+      text-decoration: none; 
+      color: #0073e6; 
       font-weight: bold;
     }
 
-    .skill:hover {
-      transform: translateY(-5px);
-      background: #0077ff;
-      color: #fff;
-    }
+    ul {margin-left: 1.2rem; margin-bottom: 1rem;}
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #0077ff;
-      color: white;
-      margin-top: 40px;
+      text-align: center; 
+      padding: 2rem; 
+      background: #111; 
+      color: #fff; 
+      margin-top: 2rem;
+    }
+    footer a {color: #fff; margin: 0 10px; text-decoration: none;}
+
+    /* Responsive Layout */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Talha Khalid</h1>
     <p>Data Analyst | Machine Learning Enthusiast</p>
-    <a href="cv.pdf" class="btn" download>Download CV</a>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <img src="img/dp.png" alt="Profile Picture">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>Hello! I’m Talha Khalid, passionate about Data Science, Machine Learning, and building impactful AI solutions. I love solving real-world problems with data and automation.</p>
+  <div class="container">
+    
+    <!-- Left Column -->
+    <div class="left-col">
+
+      <img src="img/projects/dp.png" alt="Profile Picture" class="profile-pic">
+
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I am Talha Khalid, a passionate Data Analyst and aspiring Machine Learning Engineer with a strong background in building data-driven solutions. 
+          I specialize in transforming raw data into meaningful insights through tools like Python, Power BI, SQL, and Machine Learning models. 
+          My focus is on solving real-world business problems, delivering client-focused solutions, and developing applications that combine analytics with automation.
+        </p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <p><strong>BS Data Analytics (2021 – 2025)</strong><br>Government College University, Faisalabad</p>
+        <p><em>Final Year Project (FYP): Air Quality Index Prediction – A machine learning–based system to predict AQI trends and analyze pollution levels.</em></p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <p><strong>Data Analyst Intern (July 2024 – August 2024)</strong></p>
+        <p>
+          Developed an interactive Sales & Collection dashboard using Power BI, MySQL, and Excel. 
+          Connected databases, cleaned & transformed data, and designed KPI-focused visuals to deliver 
+          an end-to-end insight solution for stakeholders.
+        </p>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <ul>
+          <li>Data Analytics – LinkedIn Learning</li>
+          <li>Introducing Generative AI with AWS – Udacity</li>
+          <li>Getting Started with AWS Cloud Essentials – AWS Training & Certification</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Achievements</h2>
+        <ul>
+          <li>Kaggle Expert in Notebooks and Datasets with active contributions.</li>
+          <li>Successfully built multiple end-to-end data projects integrating ML, NLP, and BI tools.</li>
+          <li>Recognized for creating impactful dashboards and predictive analytics models.</li>
+        </ul>
+      </section>
+
     </div>
-  </section>
 
-  <!-- Info Section -->
-  <section id="info">
-    <h2>Experience, Education & More</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Experience</h3>
-        <p>Worked on AI, Data Analytics, and ML projects including video analytics and NLP-based chatbots.</p>
-      </div>
-      <div class="info-card">
-        <h3>Education</h3>
-        <p>Bachelor’s in Computer Science - Final Year Project on Air Quality Prediction using ML.</p>
-      </div>
-      <div class="info-card">
-        <h3>Certifications</h3>
-        <p>Certified in Data Analytics, Python, and Deep Learning specializations.</p>
-      </div>
-      <div class="info-card">
-        <h3>Achievements</h3>
-        <p>Built multiple AI-based projects and contributed to open-source repositories.</p>
-      </div>
+    <!-- Right Column -->
+    <div class="right-col">
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- AQI Project -->
+        <div class="project">
+          <h3>Air Quality Index Prediction</h3>
+          <img src="img/projects/AQI project.png" alt="AQI Project Screenshot">
+          <p><strong>Problem:</strong> Urban areas face challenges in monitoring and predicting AQI trends.</p>
+          <p><strong>Solution:</strong> Developed a machine learning web app using Streamlit that predicts AQI and visualizes pollution levels.</p>
+          <p><strong>Technologies:</strong> Python, Streamlit, Scikit-learn, XGBoost, Pandas, Matplotlib</p>
+          <a href="https://github.com/talha142/AQI" target="_blank">🔗 GitHub Link</a>
+        </div>
+
+        <!-- Human Counting Project -->
+        <div class="project">
+          <h3>Human Counting using Video Analytics</h3>
+          <img src="img/projects/human_count.png" alt="Human Counting Project Screenshot">
+          <p><strong>Problem:</strong> Manual human counting in public places is inaccurate and time-consuming.</p>
+          <p><strong>Solution:</strong> Built a video analytics system to detect and count unique humans in video footage automatically.</p>
+          <p><strong>Technologies:</strong> YOLO, OpenCV, NumPy, Deep Learning</p>
+        </div>
+
+        <!-- Medical Chatbot Project -->
+        <div class="project">
+          <h3>Medical Chatbot (RAG-based)</h3>
+          <img src="img/projects/rag.png" alt="Medical Chatbot Screenshot">
+          <p><strong>Problem:</strong> Healthcare queries require quick and reliable responses.</p>
+          <p><strong>Solution:</strong> Built a Medical Chatbot using RAG and NLP techniques to provide accurate and context-aware responses.</p>
+          <p><strong>Technologies:</strong> Python, NLP, RAG pipeline, Transformer-based LLM</p>
+          <a href="https://github.com/talha142/RAG" target="_blank">🔗 GitHub Link</a>
+        </div>
+
+        <!-- Sales & Collection Project -->
+        <div class="project">
+          <h3>Sales & Collection Dashboard</h3>
+          <img src="img/projects/sales.png" alt="Sales Dashboard Screenshot">
+          <p><strong>Problem:</strong> Businesses need real-time sales and collection insights for decision-making.</p>
+          <p><strong>Solution:</strong> Designed an end-to-end dashboard in Power BI integrated with SQL & Excel for KPI tracking.</p>
+          <p><strong>Technologies:</strong> Power BI, MySQL, Excel</p>
+          <a href="https://github.com/talha142/powerbi-project" target="_blank">🔗 GitHub Link</a>
+        </div>
+
+        <!-- PSL Project -->
+        <div class="project">
+          <h3>PSL Batting Analytics (2020–2024)</h3>
+          <img src="img/projects/psl.png" alt="PSL Project Screenshot">
+          <p><strong>Problem:</strong> Cricket fans and analysts lack detailed batting performance breakdowns across PSL seasons.</p>
+          <p><strong>Solution:</strong> Analyzed PSL datasets to highlight batting patterns, strike rates, and consistency across players.</p>
+          <p><strong>Technologies:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Programming:</strong> Python, SQL, R, JavaScript</li>
+          <li><strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
+          <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
+          <li><strong>Machine Learning & AI:</strong> Scikit-learn, TensorFlow, XGBoost, NLP, YOLO, RAG</li>
+          <li><strong>Tools & Platforms:</strong> GitHub, Kaggle, Streamlit, Jupyter Notebook</li>
+        </ul>
+      </section>
+
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects-container">
-      <div class="project-card">
-        <img src="img/projects/human_count.png" alt="Human Counting" class="project-img">
-        <h3>Human Counting using Video Analytics</h3>
-        <p><strong>Problem:</strong> Manual human counting in public places is inaccurate.</p>
-        <p><strong>Solution:</strong> Developed automated video analytics for human detection and counting.</p>
-        <p><strong>Technologies:</strong> YOLO, OpenCV, NumPy, Deep Learning</p>
-      </div>
+  </div>
 
-      <div class="project-card">
-        <img src="img/projects/chatbot.png" alt="Medical Chatbot" class="project-img">
-        <h3>Medical Chatbot (RAG-based)</h3>
-        <p><strong>Problem:</strong> Quick and reliable healthcare query support is needed.</p>
-        <p><strong>Solution:</strong> Built chatbot using RAG and NLP for accurate answers.</p>
-        <p><strong>Technologies:</strong> Python, NLP, RAG</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">Python</div>
-      <div class="skill">Data Analytics</div>
-      <div class="skill">Machine Learning</div>
-      <div class="skill">Deep Learning</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Streamlit</div>
-      <div class="skill">NLP</div>
-      <div class="skill">Computer Vision</div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- Contact -->
   <footer>
-    <p>© 2025 Talha Khalid | All Rights Reserved</p>
+    <p>📱 0310 7708080</p>
+    <p>
+      <a href="https://github.com/talha142">GitHub</a> |
+      <a href="https://kaggle.com/talhachoudary">Kaggle</a> |
+      <a href="https://linkedin.com/in/talha-khalid-189092272">LinkedIn</a> |
+      <a href="https://fiverr.com/talhakhalid792">Fiverr</a>
+    </p>
   </footer>
 
 </body>
